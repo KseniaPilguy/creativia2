@@ -1,0 +1,251 @@
+.productFeatures {
+
+    h2 {
+        font: 30px 'Raleway-Bold', sans-serif;
+        color: $darkGrey;
+        text-align: center;
+        margin: 100px auto 50px;
+
+        span {
+            color: $pink;
+        }
+    }
+
+    p {
+        font: 16px 'Lato-Bold', sans-serif;
+        text-align: center;
+        margin-bottom: 102px;
+
+        span {
+            color: $pink;
+        }
+    }
+
+    .features-item {
+
+        .content {
+            width: 368px;
+            height: 51px;
+            border: 1px solid $light;
+            margin-bottom: 27px;
+
+            @media screen and (min-width: 320px) and (max-width: 540px) {
+                width: 310px;
+            }
+
+            p {
+                display: inline;
+                text-transform: uppercase;
+                color: $darkGrey;
+                font: 20px 'Raleway-Medium', sans-serif;
+                margin: 0;
+
+                @media screen and (min-width: 320px) and (max-width: 540px) {
+                    font-size: 16px;
+                }
+            }
+
+            .hexagon {
+                width: 27px;
+                height: 34px;
+                position: relative;
+                background: $light;
+
+                i {
+                    transform: scale(0.8);
+                }
+            }
+
+            .hexagon:before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                right: -10px;
+                width: 0;
+                height: 0;
+                border-top: 17px solid transparent;
+                border-left: 10px solid $light;
+                border-bottom: 17px solid transparent;
+            }
+
+            .hexagon:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -10px;
+                width: 0;
+                height: 0;
+                border-top: 17px solid transparent;
+                border-right: 10px solid $light;
+                border-bottom: 17px solid transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &:hover {
+                background-color: $pink;
+                cursor: pointer;
+
+                .hexagon {
+                    background: $white;
+
+                    i {
+                        color: $pink;
+
+                    }
+                }
+
+                .hexagon:before {
+                    border-left: 10px solid $white;
+                }
+
+
+                .hexagon:after {
+                    border-right: 10px solid $white;
+                }
+
+                p {
+                    color: $white;
+                }
+            }
+        }
+
+        .content-left {
+
+            .hexagon {
+                margin: 0 17px;
+            }
+        }
+
+        .content-right {
+            text-align: left;
+
+            .hexagon {
+                margin: 0 17px;
+            }
+        }
+    }
+
+    .left {
+
+        @media screen and (min-width: 320px) and (max-width: 540px) {
+            margin-bottom: -100px;
+        }
+    }
+
+    .phone {
+        min-width: 400px;
+        left: -5px;
+
+        @media screen and (min-width: 540px) and (max-width: 1200px) {
+            top: 40px;
+            transform: scale(0.95);
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 540px) {
+            top: 40px;
+            transform: scale(0.6);
+            margin-bottom: -50px;
+        }
+
+        .hexagon-big {
+            width: 273px;
+            height: 412px;
+            background: $bg-phone;
+            position: relative;
+            top: 130px;
+            left: 50px;
+            margin-bottom: 200px;
+            margin-right: 0;
+
+
+
+            @media screen and (min-width: 320px) and (max-width: 1200px) {
+                transform: translateX(-50%);
+                left: 50%;
+            }
+
+            .dot {
+                z-index: 7;
+                position: absolute;
+                top: -155px;
+                left: 130px;
+            }
+
+            .found {
+                position: absolute;
+                top: -180px;
+                left: -47px;
+                z-index: 5;
+            }
+
+            .women {
+                width: 334px;
+                height: 336px;
+                border-radius: 4px;
+                border: 3px solid $black;
+                position: absolute;
+                bottom: 200px;
+                left: -30px;
+                z-index: 5;
+                object-fit: cover;
+            }
+
+            .trapezoid {
+                position: absolute;
+                transform: rotate(180deg);
+                border-bottom: 205px solid $darkGrey;
+                border-left: 100px solid transparent;
+                border-right: 100px solid transparent;
+                height: 0;
+                width: 473px;
+                bottom: 0;
+                left: -100px;
+                z-index: 5;
+
+                button {
+                    transform: rotate(180deg);
+                    position: absolute;
+                    width: 170px;
+                    top: 73px;
+                    left: 50px;
+                    height: 50px;
+                    background-color: $btn-dark;
+                    border: none;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font: 20px Raleway-Medium, sans-serif;
+                    outline: none;
+                }
+            }
+        }
+
+        .hexagon-big:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: -100px;
+            width: 0;
+            height: 0;
+            border-top: 206px solid transparent;
+            border-left: 100px solid $bg-phone;
+            border-bottom: 206px solid transparent;
+        }
+
+        .hexagon-big:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -100px;
+            width: 0;
+            height: 0;
+            border-top: 206px solid transparent;
+            border-right: 100px solid $bg-phone;
+            border-bottom: 206px solid transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

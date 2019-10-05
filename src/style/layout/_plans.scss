@@ -1,0 +1,90 @@
+.plans {
+    width: 100%;
+
+    h2 {
+        @include textCaption;
+        padding-top: 100px;
+
+        span {
+            color: $pink;
+        }
+    }
+
+    p {
+        @include textDescription;
+        margin-bottom: 100px;
+
+        span {
+            color: $pink;
+        }
+    }
+
+    .plans-items {
+        margin-bottom: 100px;
+
+        .plan-item {
+            width: 270px;
+            text-align: center;
+            margin: 10px auto;
+
+            h6 {
+                width: inherit;
+                background-color: $darkGrey;
+                font: 20px 'Raleway-Medium', sans-serif;
+                color: $white;
+                text-transform: uppercase;
+                padding: 16px 0;
+                margin: 0;
+            }
+
+            h5 {
+                width: inherit;
+                background-color: $bg-light;
+                font: 45px 'Lato-Black', sans-serif;
+                color: $darkGrey;
+                padding: 16px 0;
+                margin: 0;
+
+                sub {
+                    font: 16px 'Lato-Regular', sans-serif;
+                    margin-left: 9px;
+                }
+            }
+
+            ul {
+                width: inherit;
+
+                li {
+                    box-sizing: border-box;
+                    width: inherit;
+                    list-style: none;
+                    padding: 20px 0;
+                    border: 1px solid $light;
+                    border-top: none;
+                    font: 16px 'Lato-Regular', sans-serif;
+
+                    button {
+                        width: 228px;
+                        background-color: $darkGrey;
+                        font: 18px 'Raleway-Regular', sans-serif;
+                        text-transform: uppercase;
+                        border: none;
+                        color: $white;
+                        padding: 13px;
+                        outline: none;
+                    }
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                h5,
+                button {
+                    background-color: $pink;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

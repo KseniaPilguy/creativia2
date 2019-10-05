@@ -1,0 +1,96 @@
+.twitter {
+    width: 100%;
+    background-color: $darkBg;
+
+
+    .twitter-container {
+        position: relative;
+        height: 295px;
+
+        img {
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font: 16px 'Lato-Regular', sans-serif;
+            color: $white;
+            max-width: 650px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .tweet {
+            position: absolute;
+            bottom: 0;
+            left: 29px;
+            margin: 0;
+        }
+
+        .figure {
+            height: 18px;
+            width: 100%;
+            position: relative;
+            top: 87px;
+
+            @media screen and (min-width: 380px) and (max-width: 540px) {
+                top: 75px;
+            }
+
+            @media screen and (min-width: 320px) and (max-width: 380px) {
+                top: 65px;
+            }
+
+            .hexagon {
+                width: 8px;
+                height: 18px;
+                background: $pink;
+                position: relative;
+                margin: 200px;
+
+                .line {
+                    width: 517px;
+                    height: 1px;
+                    background: $pink;
+                    position: absolute;
+                    right: 50%;
+                    top: 50%;
+                    transform: translateX(50%);
+
+                    @media screen and (min-width: 380px) and (max-width: 540px) {
+                        width: 400px;
+                    }
+
+                    @media screen and (min-width: 320px) and (max-width: 380px) {
+                        width: 300px;
+                    }
+                }
+            }
+
+            .hexagon:before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                right: -7px;
+                width: 0;
+                height: 0;
+                border-top: 9px solid transparent;
+                border-left: 7px solid $pink;
+                border-bottom: 9px solid transparent;
+            }
+
+            .hexagon:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -7px;
+                width: 0;
+                height: 0;
+                border-top: 9px solid transparent;
+                border-right: 7px solid $pink;
+                border-bottom: 9px solid transparent;
+            }
+        }
+    }
+}
+

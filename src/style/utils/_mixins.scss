@@ -1,0 +1,11 @@
+@mixin textCaption {
+        font: 30px 'Raleway-Bold', sans-serif;
+        color: $darkGrey;
+        text-align: center;
+        margin: 100px auto 50px;
+}
+
+@mixin textDescription {
+    font: 16px 'Lato-Bold',sans-serif;
+    text-align: center;
+}
