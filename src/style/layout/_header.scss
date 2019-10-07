@@ -14,25 +14,22 @@
 
   .container {
     display: flex;
-    justify-content: center;
     align-items: center;
     position: relative;
     height: 70px;
 
-    @media screen and (min-width: 1000px) and (max-width: 1200px) {
-        justify-content: space-between;
+
+    @media screen and (min-width: 320px) and (max-width: 1200px) {
+      justify-content: space-between;
     }
 
     .navbar-brand {
       z-index: 5;
       position: relative;
 
-      @media screen and (min-width: 768px) and (max-width: 1000px) {
-        left: 50px;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1000px) {
+      @media screen and (min-width: 768px) and (max-width: 1200px) {
         transform: scale(0.8);
+        left: 100px;
       }
 
       @media screen and (min-width: 540px) and (max-width: 768px) {
@@ -40,7 +37,8 @@
       }
 
       @media screen and (min-width: 320px) and (max-width: 540px) {
-        left: -55px;
+        left: -40px;
+        top: -10px;
         transform: scale(0.5);
       }
     }
@@ -57,23 +55,29 @@
       outline: none;
       cursor: pointer;
 
-      @media screen and (min-width: 1000px) and (max-width: 1200px) {
+      @media screen and (min-width: 968px) and (max-width: 1200px) {
+        display: block;
+        margin-right: 50px;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 968px) {
+        margin-right: 50px;
+        top: -10px;
         display: block;
       }
 
-      @media screen and (min-width: 347px) and (max-width: 540px) {
-        width: 30px;
-        height: 20px;
-        top: -60px;
-        left: -20px;
+      @media screen and (min-width: 540px) and (max-width: 768px) {
+        margin-right: 0;
+        top: -10px;
         display: block;
       }
 
-      @media screen and (min-width: 320px) and (max-width: 347px) {
+      @media screen and (min-width: 320px) and (max-width: 540px) {
         width: 30px;
         height: 20px;
-        top: -135px;
-        left: 250px;
+        margin-right: 0;
+        top: -20px;
+        left: -30px;
         display: block;
       }
 
@@ -113,6 +117,8 @@
     }
 
     .navbar-drop {
+      z-index: 4;
+
       @media screen and (min-width: 1000px) and (max-width: 1200px) {
         background-color: $darkGrey;
         position: absolute;
@@ -172,7 +178,7 @@
       li {
         list-style: none;
 
-        + li {
+        +li {
           margin-left: 34px;
 
           @media screen and (min-width: 347px) and (max-width: 768px) {
@@ -186,6 +192,7 @@
 
         &:hover {
           .nav-link {
+
             &::before,
             &::after {
               background-color: $pink;

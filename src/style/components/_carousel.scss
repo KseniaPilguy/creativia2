@@ -11,7 +11,20 @@
         z-index: 1;
     }
 
-    .carousel-item {
+
+    .item {
+        width: 100%;
+        justify-content: center;
+    
+
+        @media screen and (min-width: 320px) and (max-width: 576px) {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image {
+            width: 100%;
+        }
 
         .hover-img {
             display: none;
@@ -23,133 +36,165 @@
             z-index: 2;
         }
 
-        .image {
-            width: 100%;
-            object-fit: fill;
-
-            @media screen and (min-width: 320px) and (max-width: 576px) {
-                height: 280px;
-                object-fit: cover;
-            }
-        }
-
-        h5 {
-            margin-bottom: 46px;
-            font: 30px 'Raleway-Bold', sans-serif;
-            color: #ffffff;
-
-            @media screen and (min-width: 576px) and (max-width: 992px) {
-                font-size: 25px;
-                margin-bottom: 30px;
-            }
-
-            @media screen and (min-width: 320px) and (max-width: 576px) {
-                font-size: 15px;
-                margin-bottom: 5px;
-            }
-
-            span {
-                color: $pink;
-            }
-        }
-
-        p {
-            font: 16px 'Lato-Regular', sans-serif;
-            color: #f1f0f0;
-            line-height: 1.6;
-            max-width: 1050px;
-            margin: 0 auto 52px;
-
-            @media screen and (min-width: 768px) and (max-width: 992px) {
-                font-size: 14px;
-                margin-bottom: 20px;
-            }
-
-            @media screen and (min-width: 576px) and (max-width: 768px) {
-                font-size: 14px;
-                margin-bottom: 20px;
-                line-height: normal;
-            }
-
-            @media screen and (min-width: 320px) and (max-width: 576px) {
-                font-size: 12px;
-                margin-bottom: 15px;
-                line-height: normal;
-            }
-        }
-
         .carousel-caption {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
             z-index: 3;
             padding: 0;
             top: 50%;
-            transform: translateY(-31%);
+            transform: translateY(-50%);
 
-            @media screen and (min-width: 768px) and (max-width: 992px) {
-                transform: translateY(-50%);
+            @media screen and (min-width: 576px) and (max-width: 768px) {
+                width: 70%;
             }
 
-            @media screen and (min-width: 320px) and (max-width: 768px) {
-                transform: translateY(-83%);
-                display: block !important;
+            @media screen and (min-width: 320px) and (max-width: 576px) {
+                width: 60%;
             }
 
-            .btn {
-                width: 170px;
-                height: 50px;
-                text-transform: uppercase;
-                font: 20px 'Raleway-Medium', sans-serif;
-                color: $white;
-                border-radius: 0%;
-                margin: 50px 15px 0;
-                background-color: #131313;
-                outline: none;
+            h5 {
+                margin-bottom: 46px;
+                font: 30px 'Raleway-Bold', sans-serif;
+                color: #ffffff;
 
-                @media screen and (min-width: 992px) and (max-width: 1200px) {
-                    margin-top: 5px;
-                }
-
-                @media screen and (min-width: 768px) and (max-width: 992px) {
-                    width: 140px;
-                    height: 40px;
-                    font: 16px Raleway-Medium, sans-serif;
-                }
-
-                @media screen and (min-width: 576px) and (max-width: 768px) {
-                    width: 140px;
-                    height: 40px;
-                    font: 16px Raleway-Medium, sans-serif;
-                    margin-top: 5px;
+                @media screen and (min-width: 576px) and (max-width: 992px) {
+                    font-size: 25px;
+                    margin-bottom: 30px;
                 }
 
                 @media screen and (min-width: 320px) and (max-width: 576px) {
-                    width: 110px;
-                    height: 30px;
-                    font: 14px Raleway-Medium, sans-serif;
-                    margin-top: 5px;
+                    font-size: 19px;
+                    margin-bottom: 5px;
                 }
 
-                &:hover {
-                    background-color: $pink;
-                    outline: none;
+                span {
+                    color: $pink;
                 }
-
-
             }
-        }
 
-        &:hover {
-            .hover-img {
-                display: block;
+            p {
+                font: 16px 'Lato-Regular', sans-serif;
+                color: #f1f0f0;
+                line-height: 1.6;
+                max-width: 1050px;
+                margin: 0 auto 52px;
+                text-align: center;
+
+                @media screen and (min-width: 768px) and (max-width: 992px) {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+
+                @media screen and (min-width: 576px) and (max-width: 768px) {
+                    font-size: 12px;
+                    margin-bottom: 20px;
+                    line-height: normal;
+                }
+
+                @media screen and (min-width: 320px) and (max-width: 576px) {
+                    font-size: 12px;
+                    margin-bottom: 15px;
+                    line-height: normal;
+                }
+            }
+
+            .btn-section {
+                display: flex;
+                justify-content: center;
+
+                @media screen and (min-width: 320px) and (max-width: 576px) {
+                    flex-direction: column;
+                }
+
+                .btn {
+                    width: 170px;
+                    height: 50px;
+                    text-transform: uppercase;
+                    font: 20px 'Raleway-Medium', sans-serif;
+                    color: $white;
+                    border-radius: 0%;
+                    border: none;
+                    margin: 50px 15px 0;
+                    background-color: #131313;
+                    outline: none;
+                    cursor: pointer;
+
+                    @media screen and (min-width: 992px) and (max-width: 1200px) {
+                        margin-top: 5px;
+                    }
+
+                    @media screen and (min-width: 768px) and (max-width: 992px) {
+                        width: 140px;
+                        height: 40px;
+                        font: 16px Raleway-Medium, sans-serif;
+                    }
+
+                    @media screen and (min-width: 576px) and (max-width: 768px) {
+                        width: 120px;
+                        height: 30px;
+                        font: 14px Raleway-Medium, sans-serif;
+                        margin-top: 5px;
+                    }
+
+                    @media screen and (min-width: 320px) and (max-width: 576px) {
+                        width: 110px;
+                        height: 30px;
+                        font: 14px Raleway-Medium, sans-serif;
+                        margin-top: 5px;
+                    }
+
+                    &:hover {
+                        background-color: $pink;
+                        outline: none;
+                    }
+                }
+            }
+
+            &:hover {
+                .hover-img {
+                    display: block;
+                }
             }
         }
     }
 
-    .carousel-control-next,
-    .carousel-control-prev {
-        width: 7%;
+    .next {
+        position: absolute;
+        top: 50%;
+        right: 36px;
+        transform: scale(1.5);
+        z-index: 3;
 
-        span {
-            cursor: pointer;
+        i {
+            color: $listColor;
+        }
+
+        &:hover {
+            i {
+                color: $pink;
+            }
+        }
+    }
+
+    .prev {
+        position: absolute;
+        top: 50%;
+        color: white;
+        left: 36px;
+        transform: scale(1.5);
+        z-index: 3;
+
+        i {
+            color: $listColor;
+        }
+
+        &:hover {
+            i {
+                color: $pink;
+            }
         }
     }
 }

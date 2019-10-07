@@ -44,7 +44,7 @@
             .coordinates {
                 position: relative;
                 width: 300px;
-                max-height: 170px;
+                min-height: 170px;
                 background: $darkGrey;
                 margin-right: 130px;
                 top: 50%;

@@ -21,6 +21,7 @@
     }
 
     .description {
+        width: 50%;
 
         p {
             font: 16px 'Lato-Bold', sans-serif;
@@ -28,6 +29,7 @@
             color: $textColor;
             line-height: 1.5;
             margin-bottom: 42px;
+            max-width: 600px;
 
             @media screen and (min-width: 320px) and (max-width: 576px) {
                 font-size: 14px;
@@ -40,18 +42,16 @@
         margin-bottom: 9px;
 
         .card-body {
+            display: none;
 
             @media screen and (min-width: 320px) and (max-width: 576px) {
                 font-size: 12px;
             }
         }
 
-        .collapse {
-            height: 40px;
-        }
-
         .show {
             height: 89px;
+            display: block;
         }
 
         .card-header {
@@ -60,29 +60,13 @@
 
 
             .btn-link {
-                padding-left: 80px;
+                position: relative;
+                width: 568px;
+                height: 43px;
+                border: 1px solid $light;
+                background-color: transparent;
                 text-decoration: none;
-                font: 20px 'Raleway-Medium', sans-serif;
-                color: $pink;
-
-                &::before {
-                    content: '';
-                    display: block;
-                    width: 58px;
-                    height: 43px;
-                    border: 1px solid $light;
-                    border-top: none;
-                    border-bottom: none;
-                    border-top: none;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    background: url(../../img/minus.png) no-repeat center center;
-                }
-            }
-
-            .collapsed {
-                color: $darkGrey;
+                overflow: hidden;                
 
                 &::before {
                     content: '';
@@ -98,31 +82,72 @@
                     left: 0;
                     background: url(../../img/plus.png) no-repeat center center;
                 }
+
+                p {
+                    margin: 0;
+                    position: relative;
+                    left: 90px;
+                    font: 20px 'Raleway-Medium', sans-serif;
+                    color: $darkGrey;
+                }               
+            }
+
+            .checked {
+                color: $darkGrey;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 58px;
+                    height: 43px;
+                    border: 1px solid $light;
+                    border-top: none;
+                    border-bottom: none;
+                    border-top: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: url(../../img/minus.png) no-repeat center center;
+                }
+
+                p {
+                    margin: 0;
+                    position: relative;
+                    left: 90px;
+                    font: 20px 'Raleway-Medium', sans-serif;
+                    color: $pink;
+                }  
+            }
+        }
+
+
+        .card-body {
+            width: 568px;
+            position: relative;
+            top: -2px;
+            border: 1px solid $light;
+            font: 14px 'Lato-Regular', sans-serif;
+            color: $textColor;
+            line-height: 1.2;
+            padding: 15px;
+            text-align: justify;
+
+            @media screen and (min-width: 320px) and (max-width: 576px) {
+                padding: 10px;
             }
         }
     }
 
-    .card-body {
-        font: 14px 'Lato-Regular', sans-serif;
-        color: $textColor;
-        line-height: 1.2;
-        padding: 15px;
-        text-align: justify;
-
-        @media screen and (min-width: 320px) and (max-width: 576px) {
-            padding: 10px;
-        }
-    }
-
     .content {
-        @media screen and (min-width: 576px) and (max-width: 1200px) {
-            justify-content: center; 
-        }
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .gallery {
         position: relative;
-        top: -180px;
+        width: 50%;
 
         @media screen and (min-width: 576px) and (max-width: 1200px) {
             top: 0;
@@ -207,6 +232,9 @@
 
     .figure {
         height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .hexagon {
             width: 8px;
@@ -261,8 +289,18 @@
 
     .info {
 
-        .creativia-item {
-            margin: 0 auto;
+        .creativia-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .creativia-item {
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 260px;
+            }
         }
 
         .hex {
@@ -270,6 +308,9 @@
             width: 50px;
             background: $black;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             &:hover {
                 background: $pink;
