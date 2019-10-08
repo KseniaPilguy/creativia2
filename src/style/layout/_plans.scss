@@ -20,9 +20,16 @@
     }
 
     .plans-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
         margin-bottom: 100px;
 
         .plan-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 270px;
             text-align: center;
             margin: 10px auto;

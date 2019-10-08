@@ -3,7 +3,6 @@
     background-color: $darkGrey;
     text-align: center;
     padding: 0;
-
     h2 {
         font: 30px 'Raleway-Bold', sans-serif;
         color: $white;
@@ -11,37 +10,30 @@
         margin: 0 auto 27px;
         padding-top: 100px;
     }
-
     ul {
         display: block;
         text-align: center;
-
         li {
             display: inline-block;
             list-style: none;
             font: 16px 'Lato-Bold', sans-serif;
             color: $listColor;
             text-transform: uppercase;
-
             @media screen and (min-width: 320px) and (max-width: 576px) {
                 font-size: 14px;
             }
-
             +li {
                 margin-left: 22px;
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     margin-left: 10px;
                 }
             }
-
             &:hover {
                 color: $pink;
                 cursor: pointer;
             }
         }
     }
-
     .images {
         width: 100%;
         margin: 100px 0 0 0;
@@ -49,15 +41,12 @@
         position: relative;
         display: flex;
         flex-wrap: wrap;
-
         .images-big,
         .images-small {
             position: relative;
             display: inline-block;
             height: 350px;
             text-align: center;
-
-
             .hover-block {
                 height: 100%;
                 width: 100%;
@@ -70,7 +59,6 @@
                 top: 0;
                 left: 0;
             }
-
             button {
                 background-color: transparent;
                 background: url('../../img/button.png') center center;
@@ -78,13 +66,11 @@
                 width: 23px;
                 height: 24px;
             }
-
             p {
                 font: 16px 'Lato Regular', sans-serif;
                 color: white;
                 z-index: 4;
             }
-
             &:hover {
                 .hover-block {
                     display: flex;
@@ -92,53 +78,42 @@
                     transition: 1s;
                 }
             }
-
             img {
                 width: 100%;
                 object-fit: cover;
                 height: 100%;
-
             }
         }
-
         .images-big {
             width: 30%;
-
             @media screen and (min-width: 576px) and (max-width: 992px) {
                 width: 60%;
             }
-
             @media screen and (min-width: 320px) and (max-width: 576px) {
                 width: 100%;
             }
         }
-
         .images-small {
             width: 20%;
-
             @media screen and (min-width: 576px) and (max-width: 992px) {
                 width: 40%;
             }
-
             @media screen and (min-width: 320px) and (max-width: 576px) {
                 width: 100%;
             }
         }
     }
-
     .figure {
         height: 18px;
         width: 100%;
         position: relative;
         top: 118px;
-
         .hexagon {
             width: 8px;
             height: 18px;
             background: $pink;
             position: relative;
-            margin: 200px;
-
+            margin: 0 auto;
             .line {
                 width: 517px;
                 height: 1px;
@@ -147,17 +122,14 @@
                 right: 50%;
                 top: 50%;
                 transform: translateX(50%);
-
                 @media screen and (min-width: 576px) and (max-width: 768px) {
                     width: 400px;
                 }
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     width: 300px;
                 }
             }
         }
-
         .hexagon:before {
             content: "";
             position: absolute;
@@ -169,7 +141,6 @@
             border-left: 7px solid $pink;
             border-bottom: 9px solid transparent;
         }
-
         .hexagon:after {
             content: "";
             position: absolute;

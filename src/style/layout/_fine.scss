@@ -31,13 +31,14 @@
             @media screen and (min-width: 320px) and (max-width: 992px) {
                 position: static;
             }
-
-
         }
 
         .users-messages {
 
             .container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
                 height: 575px;
             }
 
@@ -45,6 +46,7 @@
                 position: relative;
                 width: 300px;
                 min-height: 170px;
+                height: 170px;
                 background: $darkGrey;
                 margin-right: 130px;
                 top: 50%;
@@ -97,6 +99,8 @@
         }
 
         .message {
+            display: flex;
+            align-self: flex-end;
             position: relative;
             background: $white;
             width: 475px;
@@ -110,6 +114,8 @@
             }
 
             .wrapper {
+                display: flex;
+                flex-direction: column;
                 padding: 50px 44px;
 
                 @media screen and (min-width: 320px) and (max-width: 576px) {

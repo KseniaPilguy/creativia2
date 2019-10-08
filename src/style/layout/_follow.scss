@@ -37,142 +37,162 @@
             }
         }
 
-        .social-item {
+        .social {
+            display: flex;
+            justify-content: center;
 
-            p {
-                font: 16px 'Lato-Regular', sans-serif;
-                color: $white;
-                margin: 0;
-            }
+            .social-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 25px;
+
+                @media screen and (min-width: 400px) and (max-width: 576px) {
+                    margin: 0 10px;
+                }
+
+                @media screen and (min-width: 320px) and (max-width: 400px) {
+                    margin: 0 5px;
+                }
+
+                p {
+                    font: 16px 'Lato-Regular', sans-serif;
+                    color: $white;
+                    margin: 0;
+                }
 
 
-            svg {
-                width: 60px;
-                height: 58px;
-                margin-bottom: 40px;
-                z-index: 4;
+                svg {
+                    width: 60px;
+                    height: 58px;
+                    margin-bottom: 40px;
+                    z-index: 4;
 
-                &:hover {
+                    &:hover {
+                        polygon {
+                            fill: $pink;
+                        }
+
+                        ~i {
+                            color: $white;
+                            z-index: 5;
+                        }
+                    }
+
                     polygon {
-                        fill: $pink;
-                    }
-
-                    ~i {
-                        color: $white;
-                        z-index: 5;
+                        stroke-width: 1;
+                        stroke: $pink;
+                        fill: transparent;
                     }
                 }
 
-                polygon {
-                    stroke-width: 1;
-                    stroke: $pink;
-                    fill: transparent;
-                }
-            }
-
-            i {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-38px);
-                color: $pink;
-            }
-
-
-            .hex {
-                height: 70px;
-                width: 40px;
-                background: transparent;
-                position: relative;
-            }
-
-            .hex:before,
-            .hex:after {
-                content: "";
-                border-top: 35px solid transparent;
-                border-bottom: 35px solid transparent;
-                position: absolute;
-            }
-
-            .hex:before {
-                left: -19px;
-                border-right: 20px solid $pink;
-            }
-
-            .hex:after {
-                right: -19px;
-                top: 0;
-                border-left: 20px solid $pink;
-            }
-
-            .hex.inner {
-                background-color: transparent;
-                transform: scale(.95, .95);
-                z-index: 1;
-            }
-
-            .hex.inner:before {
-                border-right: 20px solid transparent;
-            }
-
-            .hex.inner:after {
-                border-left: 20px solid transparent;
-            }
-        }
-
-        .figure {
-            height: 18px;
-            width: 100%;
-            position: relative;
-            top: 71px;
-
-            .hexagon {
-                width: 8px;
-                height: 18px;
-                background: $pink;
-                position: relative;
-                margin: 200px;
-
-                .line {
-                    width: 517px;
-                    height: 1px;
-                    background: $pink;
+                i {
                     position: absolute;
-                    right: 50%;
                     top: 50%;
-                    transform: translateX(50%);
+                    transform: translateY(50%);
+                    color: $pink;
+                }
 
-                    @media screen and (min-width: 576px) and (max-width: 768px) {
-                        width: 400px;
-                    }
 
-                    @media screen and (min-width: 320px) and (max-width: 576px) {
-                        width: 300px;
-                    }
+                .hex {
+                    height: 70px;
+                    width: 40px;
+                    background: transparent;
+                    position: relative;
+                }
+
+                .hex:before,
+                .hex:after {
+                    content: "";
+                    border-top: 35px solid transparent;
+                    border-bottom: 35px solid transparent;
+                    position: absolute;
+                }
+
+                .hex:before {
+                    left: -19px;
+                    border-right: 20px solid $pink;
+                }
+
+                .hex:after {
+                    right: -19px;
+                    top: 0;
+                    border-left: 20px solid $pink;
+                }
+
+                .hex.inner {
+                    background-color: transparent;
+                    transform: scale(.95, .95);
+                    z-index: 1;
+                }
+
+                .hex.inner:before {
+                    border-right: 20px solid transparent;
+                }
+
+                .hex.inner:after {
+                    border-left: 20px solid transparent;
                 }
             }
 
-            .hexagon:before {
-                content: "";
-                position: absolute;
-                top: 0px;
-                right: -7px;
-                width: 0;
-                height: 0;
-                border-top: 9px solid transparent;
-                border-left: 7px solid $pink;
-                border-bottom: 9px solid transparent;
-            }
+            .figure {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 18px;
+                width: 100%;
+                position: relative;
+                top: 71px;
 
-            .hexagon:after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: -7px;
-                width: 0;
-                height: 0;
-                border-top: 9px solid transparent;
-                border-right: 7px solid $pink;
-                border-bottom: 9px solid transparent;
+                .hexagon {
+                    width: 8px;
+                    height: 18px;
+                    background: $pink;
+                    position: relative;
+                    margin: 200px;
+
+                    .line {
+                        width: 517px;
+                        height: 1px;
+                        background: $pink;
+                        position: absolute;
+                        right: 50%;
+                        top: 50%;
+                        transform: translateX(50%);
+
+                        @media screen and (min-width: 576px) and (max-width: 768px) {
+                            width: 400px;
+                        }
+
+                        @media screen and (min-width: 320px) and (max-width: 576px) {
+                            width: 300px;
+                        }
+                    }
+                }
+
+                .hexagon:before {
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    right: -7px;
+                    width: 0;
+                    height: 0;
+                    border-top: 9px solid transparent;
+                    border-left: 7px solid $pink;
+                    border-bottom: 9px solid transparent;
+                }
+
+                .hexagon:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: -7px;
+                    width: 0;
+                    height: 0;
+                    border-top: 9px solid transparent;
+                    border-right: 7px solid $pink;
+                    border-bottom: 9px solid transparent;
+                }
             }
         }
     }

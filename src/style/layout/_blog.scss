@@ -1,44 +1,43 @@
 .blog {
-
     h2 {
         @include textCaption;
         color: $darkGrey;
-
         span {
             color: $pink;
         }
     }
-
     p {
         @include textDescription;
         color: $textColor;
         margin-bottom: 100px;
     }
-
     span {
         color: $pink;
     }
-
     .articles {
-
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .article-item {
-            margin-bottom: 50px;
-
+            display: flex;
+            justify-content: center;
+            max-width: 970px;
+            margin: 0 auto 50px;
+            @media screen and (min-width: 320px) and (max-width: 1200px) {
+                flex-direction: column;
+                align-items: center;
+            }
             .item-img {
+                display: flex;
+                justify-content: center;
                 position: relative;
                 width: 370px;
                 height: 200px;
-
-
                 img {
-
-                    @media screen and (min-width: 576px) and (max-width: 1200px) {
+                    @media screen and (min-width: 320px) and (max-width: 1200px) {
                         width: 300px;
                     }
                 }
-
-
                 .hover-block {
                     display: none;
                     width: 100%;
@@ -48,47 +47,47 @@
                     left: 0;
                     background-color: rgba(225, 255, 255, 0.5);
                     z-index: 2;
-
-                    @media screen and (min-width: 320px) and (max-width: 576px) {
+                    @media screen and (min-width: 320px) and (max-width: 1200px) {
                         width: 300px;
                         left: 50%;
                         transform: translateX(-50%);
                     }
                 }
             }
-
             .item-description {
-
+                display: flex;
+                flex-direction: column;
+                margin-left: 30px;
                 @media screen and (min-width: 320px) and (max-width: 1200px) {
                     justify-content: center;
                     align-items: center;
-                    margin-top: 10px;
+                    margin: 10px auto;
                 }
-
-
-
                 h4 {
                     font: 20px 'Raleway-Semibold', sans-serif;
                     color: $darkGrey;
-                    margin-bottom: 15px;
-
+                    margin: 0 0 15px 0;
                     @media screen and (min-width: 320px) and (max-width: 1200px) {
                         position: initial;
                         text-align: center;
                     }
                 }
-
+                .activity,
+                .user,
+                .comment,
+                .view {
+                    display: flex;
+                    flex-direction: row;
+                }
                 h5 {
                     font: 16px 'Lato-Regular', sans-serif;
                     color: $textColor;
                     text-align: justify;
-                    margin-bottom: 29px;
-
+                    margin: 0 0 29px 0;
                     @media screen and (min-width: 320px) and (max-width: 1200px) {
                         text-align: center;
                     }
                 }
-
                 button {
                     width: 120px;
                     height: 40px;
@@ -100,17 +99,14 @@
                     outline: none;
                     cursor: pointer;
                 }
-
                 .activity {
                     margin-bottom: 20px;
                     height: 15px;
-
                     img {
                         width: 15px;
                         height: 15px;
                         margin-right: 8px;
                     }
-
                     p {
                         font: 12px 'Lato-Regular', sans-serif;
                         color: $dark;
@@ -118,19 +114,15 @@
                     }
                 }
             }
-
             &:hover {
-
                 .hover-block {
                     display: block;
                 }
-
                 button {
                     background-color: $pink;
                 }
             }
         }
-
         .arrow {
             margin: 0 auto 85px;
             position: relative;

@@ -2,44 +2,55 @@
     width: 100%;
     background-image: url(../../img/bg-clints.png);
     background-size: cover;
-
     .caption {
-
         h2 {
             font: 30px 'Raleway-Bold', sans-serif;
             color: $white;
             text-align: center;
             margin: 0 auto 50px;
             padding-top: 100px;
-
             span {
                 color: $pink;
             }
         }
-
         p {
             font: 16px 'Lato-Bold', sans-serif;
             text-align: center;
             margin-bottom: 100px;
             color: $lightGrey;
-
             span {
                 color: $pink;
             }
         }
     }
-
     .clints-section {
-
-        .carousel-indicators {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @media screen and (min-width: 320px) and (max-width: 1200px) {
+            flex-wrap: wrap;
+        }
+        .item-clints {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        .slider-dots {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            bottom: 80px;
             @media screen and (min-width: 320px) and (max-width: 1200px) {
                 bottom: -40px;
             }
-
-
-            bottom: 80px;
-
-            .btn {
+            .slider-dots_item {
                 margin-right: 5px;
                 background-color: $btn;
                 border: none;
@@ -50,88 +61,82 @@
                 border-radius: 0;
                 cursor: pointer;
             }
-
             .active {
                 background-color: $pink;
             }
         }
-
         .comments {
             text-align: center;
-
             h4 {
                 font: 20px 'Raleway-Medium', sans-serif;
                 text-transform: uppercase;
                 color: $white;
                 margin: 0 0 51px 0;
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     position: initial;
                 }
             }
-
-
             p {
                 font: 16px 'Lato-Regular', sans-serif;
                 color: $listColor;
                 margin: 0 auto 47px;
                 max-width: 600px;
             }
-
             .clip-polygon {
                 clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
                 margin-bottom: 17px;
             }
-
             h6 {
-                font: 16px 'Raleway-Bold', sans-serif;
+                font: 16px 'Raleway-Regular', sans-serif;
                 text-transform: uppercase;
                 color: $pink;
+                margin: 0 0 26px 0;
             }
-
         }
-
         .companies-names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             max-width: 650px;
             padding-bottom: 100px;
-
             @media screen and (min-width: 320px) and (max-width: 1200px) {
                 position: relative;
                 top: 70px;
             }
-
             .block {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
                 cursor: pointer;
                 width: 270px;
                 height: 116px;
                 background: radial-gradient(white, #898989);
                 margin: 15px auto;
-
                 img {
                     margin-right: 8px
                 }
-
                 p {
                     margin: 0;
-                    font: 24, 16px 'Raleway-Bold'sans-serif; // шрифт
+                    font: 24px 'Raleway-Regular', sans-serif;
                 }
             }
         }
     }
-
     .figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 18px;
         width: 100%;
         position: relative;
         top: 9px;
-
         .hexagon {
             width: 8px;
             height: 18px;
             background: $pink;
             position: relative;
             margin: 200px;
-
             .line {
                 width: 517px;
                 height: 1px;
@@ -140,17 +145,14 @@
                 right: 50%;
                 top: 50%;
                 transform: translateX(50%);
-
                 @media screen and (min-width: 576px) and (max-width: 768px) {
                     width: 400px;
                 }
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     width: 300px;
                 }
             }
         }
-
         .hexagon:before {
             content: "";
             position: absolute;
@@ -162,7 +164,6 @@
             border-left: 7px solid $pink;
             border-bottom: 9px solid transparent;
         }
-
         .hexagon:after {
             content: "";
             position: absolute;

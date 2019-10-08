@@ -3,29 +3,32 @@
     position: relative;
     top: 0;
     z-index: 1;
-
     @media screen and (min-width: 320px) and (max-width: 992px) {
         width: 100%;
         position: relative;
         top: 0;
         z-index: 1;
     }
-
-
     .item {
         width: 100%;
         justify-content: center;
-    
-
+        animation-name: fade;
+        animation-duration: 1.5s;
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
         @media screen and (min-width: 320px) and (max-width: 576px) {
             height: 300px;
             object-fit: cover;
         }
-
         .image {
             width: 100%;
         }
-
         .hover-img {
             display: none;
             top: 0;
@@ -35,7 +38,6 @@
             background-color: rgba(0, 0, 0, .5);
             z-index: 2;
         }
-
         .carousel-caption {
             position: absolute;
             display: flex;
@@ -46,35 +48,28 @@
             padding: 0;
             top: 50%;
             transform: translateY(-50%);
-
             @media screen and (min-width: 576px) and (max-width: 768px) {
                 width: 70%;
             }
-
             @media screen and (min-width: 320px) and (max-width: 576px) {
                 width: 60%;
             }
-
             h5 {
                 margin-bottom: 46px;
                 font: 30px 'Raleway-Bold', sans-serif;
                 color: #ffffff;
-
                 @media screen and (min-width: 576px) and (max-width: 992px) {
                     font-size: 25px;
                     margin-bottom: 30px;
                 }
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     font-size: 19px;
                     margin-bottom: 5px;
                 }
-
                 span {
                     color: $pink;
                 }
             }
-
             p {
                 font: 16px 'Lato-Regular', sans-serif;
                 color: #f1f0f0;
@@ -82,33 +77,27 @@
                 max-width: 1050px;
                 margin: 0 auto 52px;
                 text-align: center;
-
                 @media screen and (min-width: 768px) and (max-width: 992px) {
                     font-size: 14px;
                     margin-bottom: 20px;
                 }
-
                 @media screen and (min-width: 576px) and (max-width: 768px) {
                     font-size: 12px;
                     margin-bottom: 20px;
                     line-height: normal;
                 }
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     font-size: 12px;
                     margin-bottom: 15px;
                     line-height: normal;
                 }
             }
-
             .btn-section {
                 display: flex;
                 justify-content: center;
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     flex-direction: column;
                 }
-
                 .btn {
                     width: 170px;
                     height: 50px;
@@ -121,38 +110,32 @@
                     background-color: #131313;
                     outline: none;
                     cursor: pointer;
-
                     @media screen and (min-width: 992px) and (max-width: 1200px) {
                         margin-top: 5px;
                     }
-
                     @media screen and (min-width: 768px) and (max-width: 992px) {
                         width: 140px;
                         height: 40px;
                         font: 16px Raleway-Medium, sans-serif;
                     }
-
                     @media screen and (min-width: 576px) and (max-width: 768px) {
                         width: 120px;
                         height: 30px;
                         font: 14px Raleway-Medium, sans-serif;
                         margin-top: 5px;
                     }
-
                     @media screen and (min-width: 320px) and (max-width: 576px) {
                         width: 110px;
                         height: 30px;
                         font: 14px Raleway-Medium, sans-serif;
                         margin-top: 5px;
                     }
-
                     &:hover {
                         background-color: $pink;
                         outline: none;
                     }
                 }
             }
-
             &:hover {
                 .hover-img {
                     display: block;
@@ -160,25 +143,21 @@
             }
         }
     }
-
     .next {
         position: absolute;
         top: 50%;
         right: 36px;
         transform: scale(1.5);
         z-index: 3;
-
         i {
             color: $listColor;
         }
-
         &:hover {
             i {
                 color: $pink;
             }
         }
     }
-
     .prev {
         position: absolute;
         top: 50%;
@@ -186,11 +165,9 @@
         left: 36px;
         transform: scale(1.5);
         z-index: 3;
-
         i {
             color: $listColor;
         }
-
         &:hover {
             i {
                 color: $pink;
