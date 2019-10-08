@@ -1,353 +1,356 @@
-.aboutCreativia {
-    width: 100%;
-    h2 {
-        @include textCaption;
-        color: $darkGrey;
+    .aboutCreativia {
+        width: 100%;
+        h2 {
+            @include textCaption;
+            color: $darkGrey;
+            span {
+                color: $pink;
+            }
+        }
+        p {
+            @include textDescription;
+            color: $textColor;
+            margin-bottom: 100px;
+        }
         span {
             color: $pink;
         }
-    }
-    p {
-        @include textDescription;
-        color: $textColor;
-        margin-bottom: 100px;
-    }
-    span {
-        color: $pink;
-    }
-    .description {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        @media screen and (min-width: 320px) and (max-width: 1200px) {
-            width: 90%;
-        }
-        p {
-            font: 16px 'Lato-Bold', sans-serif;
-            text-align: justify;
-            color: $textColor;
-            line-height: 1.5;
-            margin-bottom: 42px;
-            max-width: 600px;
-            @media screen and (min-width: 320px) and (max-width: 576px) {
-                font-size: 14px;
-            }
-        }
-    }
-    .card {
-        border-radius: 0;
-        margin-bottom: 9px;
-        .card-body {
-            display: none;
-            @media screen and (min-width: 320px) and (max-width: 576px) {
-                font-size: 12px;
-            }
-        }
-        .show {
-            height: 89px;
-            display: block;
-        }
-        .card-header {
-            padding: 0;
-            height: 44px;
-            .btn-link {
-                position: relative;
-                width: 568px;
-                height: 43px;
-                border: 1px solid $light;
-                background-color: transparent;
-                text-decoration: none;
-                overflow: hidden;
-                cursor: pointer;
-                &::before {
-                    content: '';
-                    display: block;
-                    width: 58px;
-                    height: 43px;
-                    border: 1px solid $light;
-                    border-top: none;
-                    border-bottom: none;
-                    border-top: none;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    background: url(../../img/plus.png) no-repeat center center;
-                }
-                @media screen and (min-width: 420px) and (max-width: 576px) {
-                    width: 100%;
-                    min-width: 400px;
-                }
-                @media screen and (min-width: 320px) and (max-width: 420px) {
-                    width: 100%;
-                    min-width: 310px;
-                }
-                p {
-                    margin: 0;
-                    position: relative;
-                    left: 90px;
-                    font: 20px 'Raleway-Medium', sans-serif;
-                    color: $darkGrey;
-                }
-            }
-            .checked {
-                color: $darkGrey;
-                max-width: 568px;
-                min-width: 300px;
-                width: 100%;
-                &::before {
-                    content: '';
-                    display: block;
-                    width: 58px;
-                    height: 43px;
-                    border: 1px solid $light;
-                    border-top: none;
-                    border-bottom: none;
-                    border-top: none;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    background: url(../../img/minus.png) no-repeat center center;
-                }
-                p {
-                    margin: 0;
-                    position: relative;
-                    left: 90px;
-                    font: 20px 'Raleway-Medium', sans-serif;
-                    color: $pink;
-                }
-            }
-        }
-        .card-body {
-            max-width: 568px;
-            min-width: 300px;
-            width: 100%;
-            position: relative;
-            top: -2px;
-            border: 1px solid $light;
-            font: 14px 'Lato-Regular', sans-serif;
-            color: $textColor;
-            line-height: 1.2;
-            padding: 15px;
-            text-align: justify;
-            @media screen and (min-width: 320px) and (max-width: 576px) {
-                padding: 10px;
-            }
-        }
-    }
-    .content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        align-items: baseline;
-        @media screen and (min-width: 320px) and (max-width: 1200px) {
-            align-items: center;
-            justify-content: center;
-        }
-    }
-    .gallery {
-        position: relative;
-        width: 47%;
-        margin-left: 30px;
-        @media screen and (min-width: 576px) and (max-width: 1200px) {
-            top: 0;
-            margin-bottom: 300px;
-            min-width: 580px;
-            margin-left: 0;
-        }
-        @media screen and (min-width: 320px) and (max-width: 576px) {
-            top: 0;
-            margin-bottom: 300px;
-            min-width: 510px;
-            margin-left: 0;
-        }
-        .clip-polygon {
-            -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        }
-        .poligon {
-            display: inline-block;
-            position: absolute;
-            left: 50%;
-            z-index: 1;
-            transform: translateX(-50%) scale(1.1);
-            width: 428px;
-            height: 373px;
-            background: $white;
-            box-sizing: border-box;
-            clip-path: polygon(50% 1%, 25% 1%, 75% 1%, 100% 50%, 75% 100%, 25% 100%, 1% 50%, 25% 1%);
-            @media screen and (min-width: 576px) and (max-width: 1200px) {
-                transform: translateX(-50%) scale(0.9);
-            }
-            @media screen and (min-width: 320px) and (max-width: 576px) {
-                transform: translateX(-50%) scale(0.7);
-            }
-        }
-        .poligon img {
-            position: absolute;
-            width: 415px;
-            height: 360px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            clip-path: polygon(50% 1%, 25% 1%, 75% 1%, 100% 50%, 75% 100%, 25% 100%, 1% 50%, 25% 1%);
-        }
-        .left {
-            position: absolute;
-            left: 0;
-        }
-        .right {
-            position: absolute;
-            right: 0;
-            object-fit: cover;
-        }
-        .left,
-        .right {
-            img {
-                @media screen and (min-width: 576px) and (max-width: 1200px) {
-                    transform: scale(0.75);
-                }
-                @media screen and (min-width: 360px) and (max-width: 576px) {
-                    transform: scale(0.6);
-                }
-                @media screen and (min-width: 320px) and (max-width: 360px) {
-                    transform: scale(0.55);
-                }
-            }
-        }
-    }
-    .figure {
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .hexagon {
-            width: 8px;
-            height: 18px;
-            background: $darkGrey;
-            position: relative;
-            margin: 200px;
-            .line {
-                width: 517px;
-                height: 1px;
-                background: $darkGrey;
-                position: absolute;
-                right: 50%;
-                top: 50%;
-                transform: translateX(50%);
-                @media screen and (min-width: 576px) and (max-width: 768px) {
-                    width: 400px;
-                }
-                @media screen and (min-width: 320px) and (max-width: 576px) {
-                    width: 300px;
-                }
-            }
-        }
-        .hexagon:before {
-            content: "";
-            position: absolute;
-            top: 0px;
-            right: -7px;
-            width: 0;
-            height: 0;
-            border-top: 9px solid transparent;
-            border-left: 7px solid $darkGrey;
-            border-bottom: 9px solid transparent;
-        }
-        .hexagon:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: -7px;
-            width: 0;
-            height: 0;
-            border-top: 9px solid transparent;
-            border-right: 7px solid $darkGrey;
-            border-bottom: 9px solid transparent;
-        }
-    }
-    .info {
-        .creativia-items {
+        .content {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             flex-wrap: wrap;
-            .creativia-item {
-                margin: 0 auto;
+            align-items: baseline;
+            @media screen and (min-width: 320px) and (max-width: 1200px) {
+                align-items: center;
+                justify-content: center;
+            }
+            .description {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                max-width: 260px;
+                width: 50%;
+                @media screen and (min-width: 320px) and (max-width: 1200px) {
+                    width: 90%;
+                }
+                p {
+                    max-width: 568px;
+                    font: 16px 'Lato-Regular', sans-serif;
+                    text-align: justify;
+                    color: $textColor;
+                    line-height: 1.5;
+                    margin-bottom: 42px;
+                    @media screen and (min-width: 320px) and (max-width: 576px) {
+                        font-size: 14px;
+                    }
+                }
+                .card {
+                    border-radius: 0;
+                    margin-bottom: 9px;
+                    .card-body {
+                        display: none;
+                        @media screen and (min-width: 320px) and (max-width: 576px) {
+                            font-size: 12px;
+                        }
+                    }
+                    .show {
+                        height: 89px;
+                        display: block;
+                    }
+                    .card-header {
+                        padding: 0;
+                        height: 44px;
+                        h5 {
+                            margin: 0;
+                        }
+                        .btn-link {
+                            position: relative;
+                            width: 568px;
+                            height: 43px;
+                            border: 1px solid $light;
+                            background-color: $lightBg;
+                            text-decoration: none;
+                            overflow: hidden;
+                            cursor: pointer;
+                            &::before {
+                                content: '';
+                                display: block;
+                                width: 58px;
+                                height: 43px;
+                                border: 1px solid $light;
+                                border-top: none;
+                                border-bottom: none;
+                                border-top: none;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background: url(../../img/plus.png) no-repeat center center;
+                            }
+                            @media screen and (min-width: 420px) and (max-width: 576px) {
+                                width: 100%;
+                                min-width: 400px;
+                            }
+                            @media screen and (min-width: 320px) and (max-width: 420px) {
+                                width: 100%;
+                                min-width: 310px;
+                            }
+                            p {
+                                margin: 0;
+                                position: relative;
+                                left: 90px;
+                                font: 20px 'Raleway-Medium', sans-serif;
+                                color: $darkGrey;
+                            }
+                        }
+                        .checked {
+                            color: $darkGrey;
+                            max-width: 568px;
+                            min-width: 300px;
+                            width: 100%;
+                            &::before {
+                                content: '';
+                                display: block;
+                                width: 58px;
+                                height: 43px;
+                                border: 1px solid $light;
+                                border-top: none;
+                                border-bottom: none;
+                                border-top: none;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background: url(../../img/minus.png) no-repeat center center;
+                            }
+                            p {
+                                margin: 0;
+                                position: relative;
+                                left: 90px;
+                                font: 20px 'Raleway-Medium', sans-serif;
+                                color: $pink;
+                            }
+                        }
+                    }
+                    .card-body {
+                        max-width: 568px;
+                        min-width: 300px;
+                        width: 100%;
+                        position: relative;
+                        top: -2px;
+                        border: 1px solid $light;
+                        font: 14px 'Lato-Regular', sans-serif;
+                        color: $textColor;
+                        line-height: 1.4;
+                        padding: 15px;
+                        text-align: justify;
+                        @media screen and (min-width: 320px) and (max-width: 576px) {
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+            .gallery {
+                position: relative;
+                width: 47%;
+                margin-left: 30px;
+                @media screen and (min-width: 576px) and (max-width: 1200px) {
+                    top: 0;
+                    margin-bottom: 300px;
+                    min-width: 580px;
+                    margin-left: 0;
+                }
+                @media screen and (min-width: 320px) and (max-width: 576px) {
+                    top: 0;
+                    margin-bottom: 300px;
+                    min-width: 510px;
+                    margin-left: 0;
+                }
+                .clip-polygon {
+                    -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                }
+                .poligon {
+                    display: inline-block;
+                    position: absolute;
+                    left: 50%;
+                    z-index: 1;
+                    transform: translateX(-50%) scale(1.1);
+                    width: 428px;
+                    height: 373px;
+                    background: $white;
+                    box-sizing: border-box;
+                    clip-path: polygon(50% 1%, 25% 1%, 75% 1%, 100% 50%, 75% 100%, 25% 100%, 1% 50%, 25% 1%);
+                    @media screen and (min-width: 576px) and (max-width: 1200px) {
+                        transform: translateX(-50%) scale(0.9);
+                    }
+                    @media screen and (min-width: 320px) and (max-width: 576px) {
+                        transform: translateX(-50%) scale(0.7);
+                    }
+                }
+                .poligon img {
+                    position: absolute;
+                    width: 415px;
+                    height: 360px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    clip-path: polygon(50% 1%, 25% 1%, 75% 1%, 100% 50%, 75% 100%, 25% 100%, 1% 50%, 25% 1%);
+                }
+                .left {
+                    position: absolute;
+                    left: 0;
+                }
+                .right {
+                    position: absolute;
+                    right: 0;
+                    object-fit: cover;
+                }
+                .left,
+                .right {
+                    img {
+                        @media screen and (min-width: 576px) and (max-width: 1200px) {
+                            transform: scale(0.75);
+                        }
+                        @media screen and (min-width: 360px) and (max-width: 576px) {
+                            transform: scale(0.6);
+                        }
+                        @media screen and (min-width: 320px) and (max-width: 360px) {
+                            transform: scale(0.55);
+                        }
+                    }
+                }
             }
         }
-        .hex {
-            height: 76px;
-            width: 50px;
-            background: $black;
-            position: relative;
+        .figure {
+            height: 200px;
             display: flex;
             justify-content: center;
             align-items: center;
-            &:hover {
-                background: $pink;
-                &:before {
-                    border-right: 20px solid $pink;
-                }
-                &:after {
-                    border-left: 20px solid $pink;
-                }
-                .inner {
-                    background-color: $pink;
-                    i {
-                        color: $white;
+            .hexagon {
+                width: 8px;
+                height: 18px;
+                background: $darkGrey;
+                position: relative;
+                margin: 200px;
+                .line {
+                    width: 517px;
+                    height: 1px;
+                    background: $darkGrey;
+                    position: absolute;
+                    right: 50%;
+                    top: 50%;
+                    transform: translateX(50%);
+                    @media screen and (min-width: 576px) and (max-width: 768px) {
+                        width: 400px;
+                    }
+                    @media screen and (min-width: 320px) and (max-width: 576px) {
+                        width: 300px;
                     }
                 }
-                .inner:before {
-                    border-right: 20px solid $pink;
-                }
-                .inner:after {
-                    border-left: 20px solid $pink;
-                }
+            }
+            .hexagon:before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                right: -7px;
+                width: 0;
+                height: 0;
+                border-top: 9px solid transparent;
+                border-left: 7px solid $darkGrey;
+                border-bottom: 9px solid transparent;
+            }
+            .hexagon:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -7px;
+                width: 0;
+                height: 0;
+                border-top: 9px solid transparent;
+                border-right: 7px solid $darkGrey;
+                border-bottom: 9px solid transparent;
             }
         }
-        .hex:before,
-        .hex:after {
-            content: "";
-            border-top: 38px solid transparent;
-            border-bottom: 38px solid transparent;
-            position: absolute;
-        }
-        .hex:before {
-            left: -19px;
-            border-right: 20px solid $black;
-        }
-        .hex:after {
-            right: -19px;
-            top: 0;
-            border-left: 20px solid $black;
-        }
-        .hex.inner {
-            background-color: $white;
-            transform: scale(.98, .98);
-            z-index: 1;
-        }
-        .hex.inner:before {
-            border-right: 20px solid $white;
-        }
-        .hex.inner:after {
-            border-left: 20px solid $white;
-        }
-        h3 {
-            text-transform: uppercase;
-            margin-top: 34px;
-            font: 20px 'Raleway-Medium', sans-serif;
-            color: $darkGrey;
-            text-align: center;
-        }
-        p {
-            font: 14px 'Lato-Regular', sans-serif;
-            color: $dark;
-            line-height: 1.4;
+        .info {
+            .creativia-items {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .creativia-item {
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    max-width: 260px;
+                }
+            }
+            .hex {
+                height: 76px;
+                width: 50px;
+                background: $black;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    background: $pink;
+                    &:before {
+                        border-right: 20px solid $pink;
+                    }
+                    &:after {
+                        border-left: 20px solid $pink;
+                    }
+                    .inner {
+                        background-color: $pink;
+                        i {
+                            color: $white;
+                        }
+                    }
+                    .inner:before {
+                        border-right: 20px solid $pink;
+                    }
+                    .inner:after {
+                        border-left: 20px solid $pink;
+                    }
+                }
+            }
+            .hex:before,
+            .hex:after {
+                content: "";
+                border-top: 38px solid transparent;
+                border-bottom: 38px solid transparent;
+                position: absolute;
+            }
+            .hex:before {
+                left: -19px;
+                border-right: 20px solid $black;
+            }
+            .hex:after {
+                right: -19px;
+                top: 0;
+                border-left: 20px solid $black;
+            }
+            .hex.inner {
+                background-color: $white;
+                transform: scale(.98, .98);
+                z-index: 1;
+            }
+            .hex.inner:before {
+                border-right: 20px solid $white;
+            }
+            .hex.inner:after {
+                border-left: 20px solid $white;
+            }
+            h3 {
+                text-transform: uppercase;
+                margin-top: 34px;
+                font: 20px 'Raleway-Medium', sans-serif;
+                color: $darkGrey;
+                text-align: center;
+            }
+            p {
+                font: 14px 'Lato-Regular', sans-serif;
+                color: $dark;
+                line-height: 1.4;
+            }
         }
     }
-}

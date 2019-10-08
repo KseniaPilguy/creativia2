@@ -1,16 +1,12 @@
 .productFeatures {
     h2 {
-        font: 30px 'Raleway-Bold', sans-serif;
-        color: $darkGrey;
-        text-align: center;
-        margin: 100px auto 50px;
+        @include textCaption;
         span {
             color: $pink;
         }
     }
     p {
-        font: 16px 'Lato-Bold', sans-serif;
-        text-align: center;
+        @include textDescription;
         margin-bottom: 102px;
         span {
             color: $pink;
@@ -56,7 +52,7 @@
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
-                    width: 27px;
+                    width: 20px;
                     height: 34px;
                     position: relative;
                     background: $light;

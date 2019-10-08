@@ -4,18 +4,14 @@
     background-size: cover;
     .caption {
         h2 {
-            font: 30px 'Raleway-Bold', sans-serif;
+            @include textCaption;
             color: $white;
-            text-align: center;
-            margin: 0 auto 50px;
-            padding-top: 100px;
             span {
                 color: $pink;
             }
         }
         p {
-            font: 16px 'Lato-Bold', sans-serif;
-            text-align: center;
+            @include textDescription;
             margin-bottom: 100px;
             color: $lightGrey;
             span {

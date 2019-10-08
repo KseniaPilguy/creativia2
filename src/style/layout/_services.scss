@@ -5,7 +5,6 @@
     h2 {
         @include textCaption;
         color: $white;
-        padding-top: 100px;
         span {
             color: $pink;
         }
