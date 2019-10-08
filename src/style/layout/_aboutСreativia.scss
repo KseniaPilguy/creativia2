@@ -21,6 +21,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             align-items: baseline;
+            min-height: 480px;
             @media screen and (min-width: 320px) and (max-width: 1200px) {
                 align-items: center;
                 justify-content: center;
@@ -47,15 +48,18 @@
                 .card {
                     border-radius: 0;
                     margin-bottom: 9px;
+                    overflow: hidden;
                     .card-body {
-                        display: none;
+                        display: block;
+                        top: -100px;
+                        transition: top 1s ease-out;
                         @media screen and (min-width: 320px) and (max-width: 576px) {
                             font-size: 12px;
                         }
                     }
                     .show {
+                        top: -2px;
                         height: 89px;
-                        display: block;
                     }
                     .card-header {
                         padding: 0;
@@ -72,6 +76,7 @@
                             text-decoration: none;
                             overflow: hidden;
                             cursor: pointer;
+                            z-index: 5;
                             &::before {
                                 content: '';
                                 display: block;
@@ -107,6 +112,7 @@
                             max-width: 568px;
                             min-width: 300px;
                             width: 100%;
+                            z-index: 5;
                             &::before {
                                 content: '';
                                 display: block;
@@ -135,7 +141,6 @@
                         min-width: 300px;
                         width: 100%;
                         position: relative;
-                        top: -2px;
                         border: 1px solid $light;
                         font: 14px 'Lato-Regular', sans-serif;
                         color: $textColor;
@@ -333,12 +338,15 @@
                 background-color: $white;
                 transform: scale(.98, .98);
                 z-index: 1;
+                transition: background-color 1.5s;
             }
             .hex.inner:before {
                 border-right: 20px solid $white;
+                transition: border-right 1.5s;
             }
             .hex.inner:after {
                 border-left: 20px solid $white;
+                transition: border-left 1.5s;
             }
             h3 {
                 text-transform: uppercase;

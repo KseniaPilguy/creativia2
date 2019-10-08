@@ -1,40 +1,30 @@
 .teamwork {
     width: 100%;
-
     h2 {
         @include textCaption;
-
         span {
             color: $pink;
         }
     }
-
     p {
         @include textDescription;
-
         span {
             color: $pink;
         }
     }
-
     .teamwork-blocks {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        
         margin: 100px 0;
-
         @media screen and (min-width: 320px) and (max-width: 1200px) {
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .employee-card {
-
             @media screen and (min-width: 320px) and (max-width: 1200px) {
                 margin: 0 15px;
             }
-
             .wrapper {
                 display: flex;
                 justify-content: center;
@@ -45,26 +35,22 @@
                 border: 1px solid $light;
                 margin: 0 auto 20px;
                 overflow: hidden;
-
                 img {
                     border-bottom: 1px solid $light;
                 }
-
                 h2 {
                     font: 20px 'Raleway-Medium', sans-serif;
                     color: $darkGrey;
                     text-transform: uppercase;
                     margin: 33px auto 25px;
                 }
-
                 h3 {
                     color: $textColor;
                     font: 16px 'Lato-Regular', sans-serif;
                     margin: 0 auto 32px;
                 }
-
                 .hover-employee-card {
-                    display: none;
+                    display: flex;
                     justify-content: center;
                     flex-direction: row;
                     align-items: center;
@@ -72,9 +58,9 @@
                     width: 100%;
                     position: absolute;
                     background-color: $darkGrey;
-                    top: 0;
+                    top: -100%;
                     left: 0;
-
+                    transition: all 1s;
                     .hexagon {
                         display: flex;
                         justify-content: center;
@@ -84,12 +70,10 @@
                         background: $white;
                         position: relative;
                         margin: 0 15px;
-
                         img {
                             border-bottom: none;
                         }
                     }
-
                     .hexagon:before {
                         content: "";
                         position: absolute;
@@ -101,7 +85,6 @@
                         border-left: 10px solid $white;
                         border-bottom: 20px solid transparent;
                     }
-
                     .hexagon:after {
                         content: "";
                         position: absolute;
@@ -117,15 +100,13 @@
                         align-items: center;
                     }
                 }
-
                 &:hover {
                     border-color: $darkGrey;
                     cursor: pointer;
-
                     .hover-employee-card {
                         display: flex;
+                        top: 0;
                     }
-
                     h2 {
                         color: $pink;
                     }
@@ -133,7 +114,6 @@
             }
         }
     }
-
     .figure {
         display: flex;
         justify-content: center;
@@ -142,14 +122,12 @@
         width: 100%;
         position: relative;
         top: 9px;
-
         .hexagon {
             width: 8px;
             height: 18px;
             background: $darkGrey;
             position: relative;
             margin: 200px;
-
             .line {
                 width: 517px;
                 height: 1px;
@@ -158,17 +136,14 @@
                 right: 50%;
                 top: 50%;
                 transform: translateX(50%);
-
                 @media screen and (min-width: 576px) and (max-width: 768px) {
                     width: 400px;
                 }
-
                 @media screen and (min-width: 320px) and (max-width: 576px) {
                     width: 300px;
                 }
             }
         }
-
         .hexagon:before {
             content: "";
             position: absolute;
@@ -180,7 +155,6 @@
             border-left: 7px solid $darkGrey;
             border-bottom: 9px solid transparent;
         }
-
         .hexagon:after {
             content: "";
             position: absolute;

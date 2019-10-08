@@ -40,6 +40,7 @@
         position: relative;
         display: flex;
         flex-wrap: wrap;
+        animation-name: opacity;
         .images-big,
         .images-small {
             position: relative;
@@ -54,9 +55,11 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                display: none;
+                display: flex;
                 top: 0;
                 left: 0;
+                opacity: 0;
+                transition: 1s opacity;
             }
             button {
                 background-color: transparent;
@@ -72,9 +75,8 @@
             }
             &:hover {
                 .hover-block {
-                    display: flex;
+                    opacity: 1;
                     cursor: pointer;
-                    transition: 1s;
                 }
             }
             img {
@@ -151,5 +153,17 @@
             border-right: 7px solid $pink;
             border-bottom: 9px solid transparent;
         }
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
     }
 }

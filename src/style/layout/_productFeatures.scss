@@ -34,6 +34,8 @@
                 height: 51px;
                 border: 1px solid $light;
                 margin-bottom: 27px;
+                transition-property: background;
+                transition-duration: 1.5s;
                 @media screen and (min-width: 320px) and (max-width: 540px) {
                     width: 310px;
                 }
