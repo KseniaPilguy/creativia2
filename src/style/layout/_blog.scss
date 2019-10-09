@@ -1,16 +1,4 @@
 .blog {
-    h2 {
-        @include textCaption;
-        color: $darkGrey;
-        span {
-            color: $pink;
-        }
-    }
-    p {
-        @include textDescription;
-        color: $textColor;
-        margin-bottom: 100px;
-    }
     span {
         color: $pink;
     }
@@ -23,7 +11,7 @@
             justify-content: center;
             max-width: 970px;
             margin: 0 auto 50px;
-            @media screen and (min-width: 320px) and (max-width: 1200px) {
+            @media screen and (max-width: 1200px) {
                 flex-direction: column;
                 align-items: center;
             }
@@ -31,10 +19,10 @@
                 display: flex;
                 justify-content: center;
                 position: relative;
-                width: 370px;
                 height: 200px;
+                transition: all 1s;
                 img {
-                    @media screen and (min-width: 320px) and (max-width: 1200px) {
+                    @media screen and (max-width: 1200px) {
                         width: 300px;
                     }
                 }
@@ -47,7 +35,7 @@
                     left: 0;
                     background-color: rgba(225, 255, 255, 0.5);
                     z-index: 2;
-                    @media screen and (min-width: 320px) and (max-width: 1200px) {
+                    @media screen and (max-width: 1200px) {
                         width: 300px;
                         left: 50%;
                         transform: translateX(-50%);
@@ -58,7 +46,7 @@
                 display: flex;
                 flex-direction: column;
                 margin-left: 30px;
-                @media screen and (min-width: 320px) and (max-width: 1200px) {
+                @media screen and (max-width: 1200px) {
                     justify-content: center;
                     align-items: center;
                     margin: 10px auto;
@@ -67,7 +55,7 @@
                     font: 20px 'Raleway-Semibold', sans-serif;
                     color: $darkGrey;
                     margin: 0 0 15px 0;
-                    @media screen and (min-width: 320px) and (max-width: 1200px) {
+                    @media screen and (max-width: 1200px) {
                         position: initial;
                         text-align: center;
                     }
@@ -83,8 +71,8 @@
                     font: 16px 'Lato-Regular', sans-serif;
                     color: $textColor;
                     text-align: justify;
-                    margin: 0 0 29px 0;
-                    @media screen and (min-width: 320px) and (max-width: 1200px) {
+                    margin: 0 0 29px;
+                    @media screen and (max-width: 1200px) {
                         text-align: center;
                     }
                 }
@@ -115,6 +103,9 @@
                 }
             }
             &:hover {
+                .item-img {
+                    box-shadow: 7px 8px 20px 0px $black;
+                }
                 .hover-block {
                     display: block;
                 }

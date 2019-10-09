@@ -1,128 +1,157 @@
 .services {
     width: 100%;
     background-color: $darkBg;
-    padding-bottom: 43px;
+    position: relative;
+
     h2 {
         @include textCaption;
         color: $white;
+
         span {
             color: $pink;
         }
     }
+
     p {
         @include textDescription;
         color: $listColor;
         margin-bottom: 100px;
+
         span {
             color: $pink;
         }
     }
+
     .services-list {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        @media screen and (min-width: 320px) and (max-width: 1200px) {
+
+        @media screen and (max-width: 1200px) {
             justify-content: center;
             flex-wrap: wrap;
         }
+
         .service-item {
             max-width: 540px;
             margin: 0 15px 57px;
+
             .service-item-caption {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: center;
-                margin-bottom: 30px;
-                @media screen and (min-width: 576px) and (max-width: 992px) {
+                margin-bottom: -10px;
+
+                @media screen and (max-width: 992px) {
                     justify-content: center !important;
                 }
-                @media screen and (min-width: 320px) and (max-width: 576px) {
+
+                @media screen and (max-width: 576px) {
                     justify-content: center !important;
                     margin: 0;
                 }
-                .hexagon {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 55px;
-                    height: 100px;
-                    background: $listColor;
+
+
+                .wrapper {
                     position: relative;
-                    margin-right: 32px;
-                    left: 25px;
-                    @media screen and (min-width: 576px) and (max-width: 992px) {
-                        transform: scale(0.8);
+                    width: 115px;
+                    height: 107px;
+
+                    @media screen and (max-width: 1200px) {
+                        width: 89px;
+                        height: 83px;
                     }
-                    @media screen and (min-width: 320px) and (max-width: 576px) {
-                        transform: scale(0.6);
+
+                    svg {
+                        width: 115px;
+                        height: 107px;
+
+                        @media screen and (max-width: 1200px) {
+                            width: 89px;
+                            height: 83px;
+                        }
+
+                        polygon {
+                            transform: scale(1.9);
+                            fill: $listColor;
+
+                            @media screen and (max-width: 1200px) {
+                                transform: scale(1.5)
+                            }
+                        }
+                    }
+
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) scale(1.2);
+
+                        @media screen and (max-width: 1200px) {
+                            transform: translate(-50%, -50%) scale(1);
+                        }
                     }
                 }
-                .hexagon:before {
-                    content: "";
-                    position: absolute;
-                    top: 0px;
-                    right: -25px;
-                    width: 0;
-                    height: 0;
-                    border-top: 50px solid transparent;
-                    border-left: 25px solid $listColor;
-                    border-bottom: 50px solid transparent;
-                }
-                .hexagon:after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: -25px;
-                    width: 0;
-                    height: 0;
-                    border-top: 50px solid transparent;
-                    border-right: 25px solid $listColor;
-                    border-bottom: 50px solid transparent;
-                }
+
                 h3 {
                     font: 20px 'Raleway-Medium', sans-serif;
                     text-transform: uppercase;
                     color: $white;
                     margin: 0 0 0 58px;
-                    @media screen and (min-width: 576px) and (max-width: 992px) {
+
+                    @media screen and (max-width: 992px) {
                         margin-left: 30px;
                         font-size: 16px;
                     }
-                    @media screen and (min-width: 320px) and (max-width: 576px) {
+
+                    @media screen and (max-width: 576px) {
                         margin-left: 10px;
                         font-size: 16px;
                     }
                 }
             }
+
             .service-item-description {
                 background-color: $description;
                 font: 16px 'Lato-Regular', sans-serif;
                 color: $listColor;
                 text-align: justify;
                 padding: 30px;
-                margin-top: 48px;
-                @media screen and (min-width: 320px) and (max-width: 576px) {
+                margin-top: 35px;
+
+                @media screen and (max-width: 576px) {
                     margin-top: 20px;
                 }
             }
+
             &:hover {
                 cursor: pointer;
+
                 .service-item-caption {
-                    .hexagon {
-                        background-color: $pink;
+                    .wrapper {
+                        svg {
+                            polygon {
+                                fill: $pink;
+                            }
+                        }
+
                         i {
                             color: $white;
                         }
+
                     }
+
                     .hexagon::before {
                         border-left: 25px solid $pink;
                     }
+
                     .hexagon::after {
                         border-right: 25px solid $pink;
                     }
                 }
+
                 .service-item-description {
                     background-color: $purple;
                     color: $white;
@@ -130,57 +159,22 @@
             }
         }
     }
+
     .figure {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 18px;
-        width: 100%;
-        position: relative;
-        top: 51px;
         .hexagon {
-            width: 8px;
-            height: 18px;
             background: $pink;
-            position: relative;
-            margin: 200px;
+
             .line {
-                width: 517px;
-                height: 1px;
                 background: $pink;
-                position: absolute;
-                right: 50%;
-                top: 50%;
-                transform: translateX(50%);
-                @media screen and (min-width: 576px) and (max-width: 992px) {
-                    width: 400px;
-                }
-                @media screen and (min-width: 320px) and (max-width: 576px) {
-                    width: 300px;
-                }
             }
         }
+
         .hexagon:before {
-            content: "";
-            position: absolute;
-            top: 0px;
-            right: -7px;
-            width: 0;
-            height: 0;
-            border-top: 9px solid transparent;
             border-left: 7px solid $pink;
-            border-bottom: 9px solid transparent;
         }
+
         .hexagon:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: -7px;
-            width: 0;
-            height: 0;
-            border-top: 9px solid transparent;
             border-right: 7px solid $pink;
-            border-bottom: 9px solid transparent;
         }
     }
 }

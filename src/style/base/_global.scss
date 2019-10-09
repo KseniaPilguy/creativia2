@@ -1,0 +1,70 @@
+.titleSection {
+    @include textCaption;
+}
+
+.spanTitleSection {
+    color: $pink;
+}
+
+.titleDescription {
+    @include textDescription;
+    margin-bottom: 100px;
+}
+
+.section-padding {
+    padding-top: 100px; 
+}
+
+.figure {
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    .hexagon {
+        width: 8px;
+        height: 18px;
+        background: $darkGrey;
+        position: relative;
+        .line {
+            width: 517px;
+            height: 1px;
+            background: $darkGrey;
+            position: absolute;
+            right: 50%;
+            top: 50%;
+            transform: translateX(50%);
+            @media screen and (max-width: 768px) {
+                width: 400px;
+            }
+            @media screen and (max-width: 576px) {
+                width: 300px;
+            }
+        }
+    }
+    .hexagon:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: -7px;
+        width: 0;
+        height: 0;
+        border-top: 9px solid transparent;
+        border-left: 7px solid $darkGrey;
+        border-bottom: 9px solid transparent;
+    }
+    .hexagon:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -7px;
+        width: 0;
+        height: 0;
+        border-top: 9px solid transparent;
+        border-right: 7px solid $darkGrey;
+        border-bottom: 9px solid transparent;
+    }
+}

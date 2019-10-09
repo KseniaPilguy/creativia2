@@ -1,17 +1,7 @@
 .plans {
     width: 100%;
-    h2 {
-        @include textCaption;
-        span {
-            color: $pink;
-        }
-    }
-    p {
-        @include textDescription;
+    .titleDescription {
         margin-bottom: 100px;
-        span {
-            color: $pink;
-        }
     }
     .plans-items {
         display: flex;
@@ -19,6 +9,11 @@
         justify-content: space-around;
         flex-wrap: wrap;
         margin-bottom: 100px;
+
+        .wrapper {
+            padding: 0 10px;
+        }
+
         .plan-item {
             display: flex;
             flex-direction: column;
@@ -42,6 +37,7 @@
                 color: $darkGrey;
                 padding: 16px 0;
                 margin: 0;
+                transition: all 1.5s;
                 sub {
                     font: 16px 'Lato-Regular', sans-serif;
                     margin-left: 9px;
@@ -67,6 +63,7 @@
                         padding: 13px;
                         outline: none;
                         cursor: pointer;
+                        transition: all 1.5s;
                     }
                 }
             }

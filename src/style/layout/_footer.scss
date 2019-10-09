@@ -10,6 +10,7 @@
         justify-content: center;
         height: 80px;
         position: relative;
+        padding-top: 0;
 
         h4,
         p {
@@ -19,7 +20,7 @@
         }
 
         h4 {
-            @media screen and (min-width: 320px) and (max-width: 576px) {
+            @media screen and (max-width: 576px) {
                 position: absolute;
                 left: 40px;
             }

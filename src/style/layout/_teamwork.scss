@@ -1,28 +1,16 @@
 .teamwork {
     width: 100%;
-    h2 {
-        @include textCaption;
-        span {
-            color: $pink;
-        }
-    }
-    p {
-        @include textDescription;
-        span {
-            color: $pink;
-        }
-    }
     .teamwork-blocks {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        margin: 100px 0;
-        @media screen and (min-width: 320px) and (max-width: 1200px) {
+        padding: 0 0 100px 0;
+        @media screen and (max-width: 1200px) {
             justify-content: center;
             flex-wrap: wrap;
         }
         .employee-card {
-            @media screen and (min-width: 320px) and (max-width: 1200px) {
+            @media screen and (max-width: 1200px) {
                 margin: 0 15px;
             }
             .wrapper {
@@ -112,59 +100,6 @@
                     }
                 }
             }
-        }
-    }
-    .figure {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 18px;
-        width: 100%;
-        position: relative;
-        top: 9px;
-        .hexagon {
-            width: 8px;
-            height: 18px;
-            background: $darkGrey;
-            position: relative;
-            margin: 200px;
-            .line {
-                width: 517px;
-                height: 1px;
-                background: $darkGrey;
-                position: absolute;
-                right: 50%;
-                top: 50%;
-                transform: translateX(50%);
-                @media screen and (min-width: 576px) and (max-width: 768px) {
-                    width: 400px;
-                }
-                @media screen and (min-width: 320px) and (max-width: 576px) {
-                    width: 300px;
-                }
-            }
-        }
-        .hexagon:before {
-            content: "";
-            position: absolute;
-            top: 0px;
-            right: -7px;
-            width: 0;
-            height: 0;
-            border-top: 9px solid transparent;
-            border-left: 7px solid $darkGrey;
-            border-bottom: 9px solid transparent;
-        }
-        .hexagon:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: -7px;
-            width: 0;
-            height: 0;
-            border-top: 9px solid transparent;
-            border-right: 7px solid $darkGrey;
-            border-bottom: 9px solid transparent;
         }
     }
 }

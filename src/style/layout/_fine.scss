@@ -1,30 +1,31 @@
 .fine {
     width: 100%;
     position: relative;
-    h2 {
-        @include textCaption;
-        span {
-            color: $pink;
-        }
-    }
-    p {
-        @include textDescription;
-        margin-bottom: 100px;
-        span {
-            color: $pink;
-        }
-    }
+
     .map {
         padding: 0;
         min-height: 575px;
         position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        #gmap_canvas {
+            img {
+                max-width: none !important;
+                background: none !important;
+            }
+        }
+
         iframe {
+            height: 575px;
             width: 100%;
             position: absolute;
-            @media screen and (min-width: 320px) and (max-width: 992px) {
+
+            @media screen and (max-width: 992px) {
                 position: static;
             }
         }
+
         .users-messages {
             .container {
                 display: flex;
@@ -32,6 +33,7 @@
                 flex-wrap: wrap;
                 height: 575px;
             }
+
             .coordinates {
                 position: relative;
                 width: 300px;
@@ -40,18 +42,33 @@
                 background: $darkGrey;
                 margin-right: 130px;
                 top: 50%;
-                @media screen and (min-width: 768px) and (max-width: 992px) {
+
+                &::after {
+                    position: absolute;
+                    right: 17px;
+                    bottom: -64px;
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    transform: rotate(13deg);
+                    border-right: 33px solid transparent;
+                    border-top: 80px solid #262626;
+                }
+
+                @media screen and (max-width: 992px) {
                     position: absolute;
                     top: 20%;
                     right: 10%;
                 }
-                @media screen and (min-width: 576px) and (max-width: 768px) {
+
+                @media screen and (max-width: 768px) {
                     position: absolute;
                     top: 20%;
                     right: 20px;
                     margin-right: 0;
                 }
-                @media screen and (min-width: 320px) and (max-width: 576px) {
+
+                @media screen and (max-width: 576px) {
                     position: absolute;
                     top: 20%;
                     margin-right: 0;
@@ -60,8 +77,10 @@
                     margin-right: 0;
                 }
             }
+
             .coordinates-text {
                 padding: 34px 0 0 24px;
+
                 p {
                     font: 16px 'MyriadPro-Regular', sans-serif;
                     color: $white;
@@ -69,17 +88,8 @@
                     text-align: left;
                 }
             }
-            svg {
-                width: 56px;
-                height: 56px;
-                position: absolute;
-                right: 15px;
-                bottom: -55px;
-                polygon {
-                    fill: $darkGrey;
-                }
-            }
         }
+
         .message {
             display: flex;
             align-self: flex-end;
@@ -87,25 +97,30 @@
             background: $white;
             width: 475px;
             height: 475px;
-            @media screen and (min-width: 320px) and (max-width: 992px) {
+
+            @media screen and (max-width: 992px) {
                 width: 600px;
                 height: 475px;
                 top: -10%;
                 border: 1px solid $black;
             }
+
             .wrapper {
                 display: flex;
                 flex-direction: column;
                 padding: 50px 44px;
-                @media screen and (min-width: 320px) and (max-width: 576px) {
+
+                @media screen and (max-width: 576px) {
                     padding: 40px 24px;
                 }
+
                 h3 {
                     font: 20px 'Raleway-Medium', sans-serif;
                     text-transform: uppercase;
                     color: $darkGrey;
                     margin: 0 0 50px 0;
                 }
+
                 input {
                     width: 100%;
                     height: 32px;
@@ -116,10 +131,12 @@
                     margin-bottom: 21px;
                     padding-left: 16px;
                 }
+
                 .last-input {
                     height: 86px;
                     margin-top: 6px;
                 }
+
                 button {
                     width: 120px;
                     height: 40px;

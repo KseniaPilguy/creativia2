@@ -6,11 +6,13 @@
     background-size: cover;
     background-position: center center;
     z-index: 1;
+
     &:hover {
         .hover-bg {
             display: block;
         }
     }
+
     .hover-bg {
         display: none;
         width: 100%;
@@ -20,67 +22,89 @@
         left: 0;
         background-color: rgba(0, 0, 0, 0.5);
     }
+
     .container {
         z-index: 3;
+        padding-bottom: 90px;
+
         h2 {
             @include textCaption;
             color: $white;
             margin: 0 auto 50px;
+
             span {
                 color: $pink;
             }
         }
+
         .social {
             display: flex;
             justify-content: center;
+
             .social-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 margin: 0 25px;
-                @media screen and (min-width: 400px) and (max-width: 576px) {
+
+                @media screen and (max-width: 576px) {
                     margin: 0 10px;
                 }
-                @media screen and (min-width: 320px) and (max-width: 400px) {
+
+                @media screen and (max-width: 400px) {
                     margin: 0 5px;
                 }
+
                 p {
                     font: 16px 'Lato-Regular', sans-serif;
                     color: $white;
                     margin: 0;
                 }
-                svg {
-                    width: 60px;
-                    height: 58px;
+
+                .wrapper {
+                    position: relative;
                     margin-bottom: 40px;
-                    z-index: 4;
-                    &:hover {
+
+                    svg {
+                        width: 60px;
+                        height: 58px;
+                        z-index: 4;
+
+                        &:hover {
+                            polygon {
+                                fill: $pink;
+                            }
+
+                            ~i {
+                                color: $white;
+                                z-index: 5;
+                            }
+                        }
+
                         polygon {
-                            fill: $pink;
-                        }
-                        ~i {
-                            color: $white;
-                            z-index: 5;
+                            stroke-width: 1;
+                            stroke: $pink;
+                            fill: transparent;
+                            transition: fill 1.5s;
                         }
                     }
-                    polygon {
-                        stroke-width: 1;
-                        stroke: $pink;
-                        fill: transparent;
+
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -60%);
+                        color: $pink;
                     }
                 }
-                i {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(50%);
-                    color: $pink;
-                }
+
                 .hex {
                     height: 70px;
                     width: 40px;
                     background: transparent;
                     position: relative;
                 }
+
                 .hex:before,
                 .hex:after {
                     content: "";
@@ -88,79 +112,52 @@
                     border-bottom: 35px solid transparent;
                     position: absolute;
                 }
+
                 .hex:before {
                     left: -19px;
                     border-right: 20px solid $pink;
                 }
+
                 .hex:after {
                     right: -19px;
                     top: 0;
                     border-left: 20px solid $pink;
                 }
+
                 .hex.inner {
                     background-color: transparent;
                     transform: scale(.95, .95);
                     z-index: 1;
                 }
+
                 .hex.inner:before {
                     border-right: 20px solid transparent;
                 }
+
                 .hex.inner:after {
                     border-left: 20px solid transparent;
                 }
             }
-            .figure {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 18px;
-                width: 100%;
-                position: relative;
-                top: 71px;
-                .hexagon {
-                    width: 8px;
-                    height: 18px;
+        }
+
+        .figure {
+            bottom: 6px;
+
+            .hexagon {
+                background: $pink;
+                margin: 200px;
+
+                .line {
                     background: $pink;
-                    position: relative;
-                    margin: 200px;
-                    .line {
-                        width: 517px;
-                        height: 1px;
-                        background: $pink;
-                        position: absolute;
-                        right: 50%;
-                        top: 50%;
-                        transform: translateX(50%);
-                        @media screen and (min-width: 576px) and (max-width: 768px) {
-                            width: 400px;
-                        }
-                        @media screen and (min-width: 320px) and (max-width: 576px) {
-                            width: 300px;
-                        }
-                    }
                 }
-                .hexagon:before {
-                    content: "";
-                    position: absolute;
-                    top: 0px;
-                    right: -7px;
-                    width: 0;
-                    height: 0;
-                    border-top: 9px solid transparent;
-                    border-left: 7px solid $pink;
-                    border-bottom: 9px solid transparent;
-                }
-                .hexagon:after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: -7px;
-                    width: 0;
-                    height: 0;
-                    border-top: 9px solid transparent;
-                    border-right: 7px solid $pink;
-                    border-bottom: 9px solid transparent;
-                }
+            }
+
+            .hexagon:before {
+                border-left: 7px solid $pink;
+            }
+
+            .hexagon:after {
+                border-right: 7px solid $pink;
             }
         }
     }
